@@ -1,6 +1,11 @@
-let type = "WebGL"
-if(!PIXI.utils.isWebGLSupported()){
-  type = "canvas"
-}
+(function () {
+  'use strict';
 
-PIXI.utils.sayHello(type)
+  let type = "WebGL";
+  if(!PIXI.utils.isWebGLSupported()){
+    type = "canvas";
+  }
+
+  PIXI.utils.sayHello(type);
+
+}());
