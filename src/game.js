@@ -3,4 +3,4 @@ if(!PIXI.utils.isWebGLSupported()){
   type = "canvas"
 }
 
-PIXI.utils.sayHello('FOO')
+PIXI.utils.sayHello(type)
