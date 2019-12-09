@@ -10,7 +10,7 @@
     "url": "git+https://github.com/cjmarsh725/dungeon-crawler.git"
   },
   "author": "Chris Marsh",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/cjmarsh725/dungeon-crawler/issues"
   },
