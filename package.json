@@ -1,9 +1,9 @@
 {
   "name": "dungeon-crawler",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
-    "build": "rollup -c"
+    "start": "rollup -cw"
   },
   "repository": {
     "type": "git",
@@ -16,8 +16,7 @@
   },
   "homepage": "https://github.com/cjmarsh725/dungeon-crawler#readme",
   "devDependencies": {
-    "rollup-plugin-livereload": "^1.0.4",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-serve": "^1.0.1"
+    "rollup-plugin-live-server": "^1.0.3",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }

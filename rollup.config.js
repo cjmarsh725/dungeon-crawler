@@ -1,6 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve';
-import livereload from 'rollup-plugin-livereload';
-import serve from 'rollup-plugin-serve';
+import liveServer from 'rollup-plugin-live-server';
 
 export default {
   input: 'src/game.js',
@@ -12,7 +11,13 @@ export default {
   },
   plugins: [
     resolve(),
-    livereload(),
-    serve('public')
+    liveServer({
+      port: 8001,
+      host: "0.0.0.0",
+      root: "./public",
+      open: true,
+      wait: 200,
+      logLevel: 2
+    })
   ]
 };
