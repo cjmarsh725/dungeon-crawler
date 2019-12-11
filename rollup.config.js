@@ -2,7 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import liveServer from 'rollup-plugin-live-server';
 
 export default {
-  input: 'src/game.js',
+  input: 'src/core/game.js',
   cache: true,
   output: {
     file: 'public/js/game.js',
