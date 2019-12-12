@@ -2,8 +2,9 @@ const setup = app => {
   app.renderer.view.style.position = "absolute";
   app.renderer.view.style.display = "block";
   app.renderer.autoResize = true;
-  app.renderer.resize(window.innerWidth, window.innerHeight);
-  
+  const resize = () => app.renderer.resize(window.innerWidth, window.innerHeight);
+  resize();
+  window.addEventListener('resize', resize);
   document.body.appendChild(app.view);
 
   PIXI.loader
