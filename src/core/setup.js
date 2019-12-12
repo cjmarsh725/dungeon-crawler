@@ -5,6 +5,23 @@ const setup = app => {
   app.renderer.resize(window.innerWidth, window.innerHeight);
   
   document.body.appendChild(app.view);
+
+  PIXI.loader
+    .add("img/characters/knight.png")
+    .load(() => createSprites(app));
+}
+
+const createSprites = app => {
+  const sprites = {};
+  const tex = path => {
+    return PIXI.loader.resources[path].texture;
+  }
+
+  sprites["knight"] = new PIXI.Sprite(tex("img/characters/knight.png"));
+
+  app.stage.addChild(sprites["knight"]);
+
+  return sprites;
 }
 
 export default setup;
