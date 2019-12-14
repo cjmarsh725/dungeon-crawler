@@ -14,6 +14,7 @@ const setup = app => {
       "img/characters/priest.png",
       "img/characters/thief.png"
       ])
+    .add("json/sprites.json")
     .load(() => createSprites(app));
 }
 
@@ -36,6 +37,15 @@ const createSprites = app => {
   app.stage.addChild(sprites["mage"]);
   app.stage.addChild(sprites["priest"]);
   app.stage.addChild(sprites["thief"]);
+
+  // const makeSprite = name => {
+  //   sprites[name] = new PIXI.Sprite(PIXI.loader.resources["json/sprites.json"].textures[name]);
+  // }
+
+  // makeSprite("bat");
+  // makeSprite("demon");
+
+  // app.stage.addChild(sprites["demon"]);
 
   return sprites;
 }
