@@ -7,7 +7,7 @@ const setup = app => {
   window.addEventListener('resize', resize);
   document.body.appendChild(app.view);
 
-  PIXI.loader
+  PIXI.Loader.shared
     .add([
       "img/characters/knight.png",
       "img/characters/mage.png",
@@ -21,7 +21,7 @@ const setup = app => {
 const createSprites = app => {
   const sprites = {};
   const tex = path => {
-    return PIXI.loader.resources[path].texture;
+    return PIXI.Loader.shared.resources[path].texture;
   }
 
   sprites["knight"] = new PIXI.Sprite(tex("img/characters/knight.png"));
