@@ -44,10 +44,9 @@ const createSprites = app => {
     sprites[name] = new PIXI.Sprite(PIXI.Loader.shared.resources["json/sprites.json"].spritesheet.textures[name]);
   }
 
-  makeSprite("bat");
-  makeSprite("demon");
+  makeSprite("d1_wall_solid");
 
-  app.stage.addChild(sprites["demon"]);
+  app.stage.addChild(sprites["d1_wall_solid"]);
 
   return sprites;
 }
