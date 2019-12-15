@@ -16,7 +16,7 @@
     }
   },
   "meta": {
-    "image": "img/enemies/enemy_tiles.png",
+    "image": "../img/enemies/enemy_tiles.png",
     "format": "RGBA8888",
     "size": {"w":160,"h":96},
     "scale": 1

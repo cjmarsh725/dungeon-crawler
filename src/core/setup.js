@@ -20,32 +20,34 @@ const setup = app => {
 
 const createSprites = app => {
   const sprites = {};
-  const tex = path => {
-    return PIXI.Loader.shared.resources[path].texture;
-  }
-
-  sprites["knight"] = new PIXI.Sprite(tex("img/characters/knight.png"));
-  sprites["mage"] = new PIXI.Sprite(tex("img/characters/mage.png"));
-  sprites["priest"] = new PIXI.Sprite(tex("img/characters/priest.png"));
-  sprites["thief"] = new PIXI.Sprite(tex("img/characters/thief.png"));
-
-  sprites["mage"].x = 50;
-  sprites["priest"].x = 100;
-  sprites["thief"].x = 150;
-
-  app.stage.addChild(sprites["knight"]);
-  app.stage.addChild(sprites["mage"]);
-  app.stage.addChild(sprites["priest"]);
-  app.stage.addChild(sprites["thief"]);
-
-  // const makeSprite = name => {
-  //   sprites[name] = new PIXI.Sprite(PIXI.loader.resources["json/sprites.json"].textures[name]);
+  // const tex = path => {
+  //   return PIXI.Loader.shared.resources[path].texture;
   // }
 
-  // makeSprite("bat");
-  // makeSprite("demon");
+  // sprites["knight"] = new PIXI.Sprite(tex("img/characters/knight.png"));
+  // sprites["mage"] = new PIXI.Sprite(tex("img/characters/mage.png"));
+  // sprites["priest"] = new PIXI.Sprite(tex("img/characters/priest.png"));
+  // sprites["thief"] = new PIXI.Sprite(tex("img/characters/thief.png"));
 
-  // app.stage.addChild(sprites["demon"]);
+  // sprites["mage"].x = 50;
+  // sprites["priest"].x = 100;
+  // sprites["thief"].x = 150;
+
+  // app.stage.addChild(sprites["knight"]);
+  // app.stage.addChild(sprites["mage"]);
+  // app.stage.addChild(sprites["priest"]);
+  // app.stage.addChild(sprites["thief"]);
+
+  console.log(PIXI.Loader.shared.resources["json/sprites.json"]);
+
+  const makeSprite = name => {
+    sprites[name] = new PIXI.Sprite(PIXI.Loader.shared.resources["json/sprites.json"].spritesheet.textures[name]);
+  }
+
+  makeSprite("bat");
+  makeSprite("demon");
+
+  app.stage.addChild(sprites["demon"]);
 
   return sprites;
 }
