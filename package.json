@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "start": "rollup -cw"
+    "start": "rollup -cw",
+    "format": "node src/utils/formatTilesetData.js"
   },
   "repository": {
     "type": "git",
