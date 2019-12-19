@@ -1,16 +1,16 @@
 const tilePositions = require('./tilePositions');
 const fs = require("fs");
 
-const texNames = {}
+const texNames = []
 
 tilePositions.forEach(tile => {
-  texNames[tile.name] = tile.name;
+  texNames.push(tile.name);
 })
 
-fs.writeFile("src/utils/textureNames.json", JSON.stringify(texNames, null, 2), (err) => {
-  if (err) {
-      console.error(err);
-      return;
-  };
-  console.log("File has been created");
-});
+const file = fs.createWriteStream('src/utils/textureNames.js');
+file.on('error', err => console.error(err));
+file.write('const textureNames = [\r');
+texNames.forEach(name => file.write('\t"' + name +'",\r'))
+file.write(']\r\r');
+file.write('export default textureNames;');
+file.end();
