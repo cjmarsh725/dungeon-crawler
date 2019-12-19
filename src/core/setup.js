@@ -46,7 +46,7 @@ const createSprites = app => {
     return PIXI.Loader.shared.resources["json/sprites.json"].spritesheet.textures[name];
   }
 
-  textureNames.map(p => p.name).forEach(name => {
+  textureNames.forEach(name => {
     textureLib[name] = getTexture(name);
   })
 
