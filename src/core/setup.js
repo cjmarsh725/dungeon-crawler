@@ -1,3 +1,5 @@
+import textureNames from '../utils/textureNames';
+
 const setup = app => {
   app.renderer.view.style.position = "absolute";
   app.renderer.view.style.display = "block";
@@ -38,7 +40,17 @@ const createSprites = app => {
   // app.stage.addChild(sprites["priest"]);
   // app.stage.addChild(sprites["thief"]);
 
-  console.log(PIXI.Loader.shared.resources["json/sprites.json"]);
+  const textureLib = {};
+
+  const getTexture = name => {
+    return PIXI.Loader.shared.resources["json/sprites.json"].spritesheet.textures[name];
+  }
+
+  textureNames.map(p => p.name).forEach(name => {
+    textureLib[name] = getTexture(name);
+  })
+
+  console.log(textureLib)
 
   const makeSprite = name => {
     sprites[name] = new PIXI.Sprite(PIXI.Loader.shared.resources["json/sprites.json"].spritesheet.textures[name]);
